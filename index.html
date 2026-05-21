@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Kusu 🎂</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    overflow-x:hidden;
+    min-height:100vh;
+    background:linear-gradient(135deg,#0f172a,#111827,#1e293b,#334155);
+    color:white;
+    position:relative;
+}
+
+/* Animated Background */
+
+.bg-animation{
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    overflow:hidden;
+    z-index:-2;
+}
+
+.bg-animation span{
+    position:absolute;
+    display:block;
+    border-radius:50%;
+    bottom:-150px;
+    animation:animate 25s linear infinite;
+}
+
+.bg-animation span:nth-child(1){
+    left:10%;
+    width:80px;
+    height:80px;
+    background:rgba(56,189,248,0.15);
+    animation-duration:18s;
+}
+
+.bg-animation span:nth-child(2){
+    left:25%;
+    width:25px;
+    height:25px;
+    background:#38bdf8;
+    animation-duration:10s;
+}
+
+.bg-animation span:nth-child(3){
+    left:45%;
+    width:100px;
+    height:100px;
+    background:rgba(56,189,248,0.1);
+    animation-duration:22s;
+}
+
+.bg-animation span:nth-child(4){
+    left:70%;
+    width:45px;
+    height:45px;
+    background:#38bdf8;
+    animation-duration:14s;
+}
+
+.bg-animation span:nth-child(5){
+    left:85%;
+    width:120px;
+    height:120px;
+    background:rgba(56,189,248,0.15);
+    animation-duration:25s;
+}
+
+@keyframes animate{
+
+    0%{
+        transform:translateY(0) rotate(0deg);
+        opacity:0;
+    }
+
+    100%{
+        transform:translateY(-1200px) rotate(720deg);
+        opacity:1;
+    }
+}
+
+/* Main Container */
+
+.container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    padding:25px;
+    text-align:center;
+}
+
+/* Card */
+
+.card{
+    width:95%;
+    max-width:850px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,0.1);
+    border-radius:35px;
+    padding:45px;
+    position:relative;
+    overflow:hidden;
+    box-shadow:0 15px 50px rgba(0,0,0,0.4);
+    animation:zoomIn 1.5s ease;
+}
+
+.card::before{
+    content:'';
+    position:absolute;
+    width:200%;
+    height:200%;
+    background:linear-gradient(
+        transparent,
+        rgba(255,255,255,0.1),
+        transparent
+    );
+
+    transform:rotate(45deg);
+    top:-80%;
+    left:-80%;
+    animation:shine 5s infinite;
+}
+
+@keyframes shine{
+    100%{
+        left:120%;
+        top:120%;
+    }
+}
+
+@keyframes zoomIn{
+
+    from{
+        opacity:0;
+        transform:scale(0.5);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+/* Cake */
+
+.cake{
+    font-size:6rem;
+    animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-18px);
+    }
+}
+
+/* Heading */
+
+h1{
+    margin-top:15px;
+    font-size:4.5rem;
+    font-weight:800;
+    text-shadow:0 0 20px rgba(56,189,248,0.8);
+    animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+
+    from{
+        text-shadow:0 0 10px #38bdf8;
+    }
+
+    to{
+        text-shadow:0 0 35px #38bdf8;
+    }
+}
+
+.friend-name{
+    color:#38bdf8;
+}
+
+.subtitle{
+    margin-top:18px;
+    font-size:1.3rem;
+    color:#cbd5e1;
+}
+
+.message{
+    margin-top:25px;
+    line-height:2;
+    font-size:1.05rem;
+    color:#e2e8f0;
+}
+
+/* Buttons */
+
+.btn{
+    margin-top:30px;
+    padding:16px 35px;
+    border:none;
+    border-radius:50px;
+    font-size:1rem;
+    font-weight:700;
+    cursor:pointer;
+    transition:0.4s;
+    background:#38bdf8;
+    color:white;
+    box-shadow:0 10px 30px rgba(56,189,248,0.4);
+}
+
+.btn:hover{
+    transform:scale(1.12) rotate(-2deg);
+    background:#0ea5e9;
+    color:white;
+    box-shadow:0 0 30px #38bdf8;
+}
+
+.surprise-btn{
+    margin-left:15px;
+}
+
+/* Sections */
+
+.letter,
+.surprise-box{
+    display:none;
+    margin-top:35px;
+    padding:30px;
+    border-radius:25px;
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.1);
+    animation:fadeMagic 1s ease;
+}
+
+@keyframes fadeMagic{
+
+    from{
+        opacity:0;
+        transform:translateY(40px) scale(0.8);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+.gift{
+    font-size:5rem;
+    animation:spinGift 4s linear infinite;
+}
+
+@keyframes spinGift{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+.final-text{
+    margin-top:30px;
+    color:#38bdf8;
+    animation:flash 1s infinite;
+}
+
+@keyframes flash{
+
+    50%{
+        opacity:0.5;
+    }
+}
+
+/* Footer */
+
+.footer{
+    margin-top:35px;
+    font-size:0.95rem;
+    opacity:0.95;
+    line-height:1.8;
+    color:#94a3b8;
+}
+
+/* Confetti */
+
+.confetti{
+    position:fixed;
+    width:12px;
+    height:12px;
+    top:-20px;
+    animation:fall linear infinite;
+    z-index:-1;
+}
+
+@keyframes fall{
+
+    to{
+        transform:translateY(120vh) rotate(720deg);
+    }
+}
+
+/* Responsive */
+
+@media(max-width:700px){
+
+    h1{
+        font-size:2.8rem;
+    }
+
+    .card{
+        padding:25px;
+    }
+
+    .btn{
+        width:100%;
+        margin-top:15px;
+    }
+
+    .surprise-btn{
+        margin-left:0;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Animated Background -->
+
+<div class="bg-animation">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+<!-- Main Container -->
+
+<div class="container">
+
+<div class="card">
+
+<div class="cake">🎂</div>
+
+<h1>
+Happy Birthday <br>
+<span class="friend-name">Kusu</span>
+</h1>
+
+<p class="subtitle">
+The most special person deserves the most special day ✨
+</p>
+
+<p class="message">
+Thank you for coming back into my life 💖
+<br>
+You made everything brighter again.
+</p>
+
+<!-- Buttons -->
+
+<button class="btn" onclick="showLetter()">
+Open Special Letter 💌
+</button>
+
+<button class="btn surprise-btn" onclick="openSurprise()">
+Open Secret Surprise 🎁
+</button>
+
+<!-- Letter Section -->
+
+<div class="letter" id="letter">
+
+<h2>💖 A Special Message For You 💖</h2>
+
+<p class="message">
+
+Dear Kusu,
+<br><br>
+
+Happy Birthday 🎉
+<br><br>
+
+Thank you so much for coming back into my life.
+Those 3 years without you were honestly very difficult for me.
+Having you back again means more than words can explain.
+<br><br>
+
+You brought happiness, comfort, and positivity back into my life,
+and I’m truly grateful for that.
+<br><br>
+
+I only have one wish now —
+please never leave my life again. 💖
+<br><br>
+
+No matter what happens,
+I’ll always value our friendship and every moment we share together.
+<br><br>
+
+Stay happy, keep smiling,
+and always remember how special you are 🌸
+
+</p>
+
+<p style="margin-top:20px;font-weight:700;">
+— From Krishu ❤️
+</p>
+
+</div>
+
+<!-- Surprise Section -->
+
+<div class="surprise-box" id="surpriseBox">
+
+<h2>✨ Secret Birthday Surprise ✨</h2>
+
+<div class="gift">🎁</div>
+
+<p class="message">
+
+You deserve unlimited happiness,
+love, success and positivity 💫
+<br><br>
+
+Never stop smiling because your smile
+makes the world brighter 🌸
+<br><br>
+
+Maybe in the future,
+we will create even more beautiful memories together
+and I’ll keep adding them here forever 💖
+
+</p>
+
+<h2 class="final-text">
+Happy Birthday Once Again 🎂❤️
+</h2>
+
+</div>
+
+<!-- Footer -->
+
+<div class="footer">
+
+🎂 Happy Birthday Kusu ❤️
+<br><br>
+
+All Rights Reserved © Vihaan Krishn
+<br>
+
+GitHub • Made with ❤️ by Krishu
+
+</div>
+
+</div>
+</div>
+
+<script>
+
+/* Confetti Animation */
+
+for(let i=0;i<140;i++){
+
+    let confetti = document.createElement('div');
+
+    confetti.classList.add('confetti');
+
+    confetti.style.left = Math.random()*100 + 'vw';
+
+    confetti.style.background =
+    `hsl(${Math.random()*360},100%,50%)`;
+
+    confetti.style.animationDuration =
+    (Math.random()*5+5) + 's';
+
+    confetti.style.opacity = Math.random();
+
+    document.body.appendChild(confetti);
+}
+
+/* Open Letter */
+
+function showLetter(){
+
+    let letter = document.getElementById("letter");
+
+    if(letter.style.display === "block"){
+        letter.style.display = "none";
+    }
+
+    else{
+        letter.style.display = "block";
+    }
+}
+
+/* Open Surprise */
+
+function openSurprise(){
+
+    let box = document.getElementById("surpriseBox");
+
+    if(box.style.display === "block"){
+        box.style.display = "none";
+    }
+
+    else{
+        box.style.display = "block";
+    }
+}
+
+</script>
+
+</body>
+</html>
